@@ -1,0 +1,69 @@
+<?xml version='1.0' standalone='yes'?>
+<!DOCTYPE PLUGIN [
+  <!ENTITY name      "webhookd">
+  <!ENTITY author    "fejich">
+  <!ENTITY version   "2025.01.08">
+  <!ENTITY gitURL    "https://github.com/&author;/unraid-&name;">
+  <!ENTITY pluginURL "https://raw.githubusercontent.com/&author;/unraid-&name;/master/&name;.plg">
+  <!ENTITY plugin    "/boot/config/plugins/&name;">
+  <!ENTITY emhttp    "/usr/local/emhttp/plugins/&name;">
+]>
+
+<PLUGIN  name="&name;" author="&author;" version="&version;" pluginURL="&pluginURL;" min="6.9.0" support="https://github.com/fejich/unraid-webhookd">
+
+<CHANGES>
+
+###2025.01.08
+- Initial release
+
+</CHANGES>
+
+<FILE Name="/boot/config/plugins/&name;/&name;-&version;.tgz" Run="installpkg">
+<URL>https://raw.githubusercontent.com/&author;/unraid-&name;/main/&name;-&version;.tgz</URL>
+</FILE>
+
+<FILE Name="/usr/local/emhttp/plugins/&name;/images/&name;.png">
+<URL>https://raw.githubusercontent.com/&author;/unraid-&name;/main/logo.png</URL>
+</FILE>
+
+<FILE Name="&emhttp;/README.md">
+<INLINE>
+**webhookd**
+
+A very simple webhook server to launch shell scripts.
+
+This is a plugin for the webhookd binary executable
+
+Enable the service, run
+
+```
+/etc/rc.d/rc.webhookd start
+```
+
+Working directory: /mnt/user/appdata/webhookd/scripts
+
+Listening port 8080
+
+Source: https://github.com/ncarlier/webhookd
+</INLINE>
+</FILE>
+
+<FILE Run="/bin/bash" Method="remove">
+<INLINE>
+
+echo "------------------------"
+echo "---Uninstalling webhookd---"
+echo "------------------------"
+# Remove plugin related files
+removepkg &name;-&version;
+rm -rf &plugin;
+rm -rf &emhttp;
+echo
+echo "---------------------------------------"
+echo "---Uninstallation of webhookd complete!---"
+echo "---------------------------------------"
+echo
+
+</INLINE>
+</FILE>
+</PLUGIN>
