@@ -2,7 +2,7 @@
 <!DOCTYPE PLUGIN [
   <!ENTITY name      "webhookd">
   <!ENTITY author    "fejich">
-  <!ENTITY version   "2025.02.04">
+  <!ENTITY version   "2025.07.18">
   <!ENTITY gitURL    "https://github.com/&author;/unraid-&name;">
   <!ENTITY pluginURL "https://raw.githubusercontent.com/&author;/unraid-&name;/master/&name;.plg">
   <!ENTITY plugin    "/boot/config/plugins/&name;">
@@ -12,6 +12,9 @@
 <PLUGIN  name="&name;" author="&author;" version="&version;" pluginURL="&pluginURL;" min="6.9.0" support="https://forums.unraid.net/topic/184757-support-fejich-ctop-fclones-webhookd/">
 
 <CHANGES>
+###2025.07.18
+- Fix the incorrect value of the `webhookd.env` variable.
+
 ###2025.02.04
 - Fix rc script environment variable handling.
 
