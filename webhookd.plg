@@ -28,10 +28,12 @@
 
 <FILE Name="/boot/config/plugins/&name;/&name;-&version;.tgz" Run="installpkg">
 <URL>https://raw.githubusercontent.com/&author;/unraid-&name;/main/&name;-&version;.tgz</URL>
+<SHA256>2b66d03cf5c00e326db9f5ffe89f645b4e9d6ad45e02b95390cfbb1205aa6097</SHA256>
 </FILE>
 
 <FILE Name="/boot/config/plugins/&name;/icon.png">
 <URL>https://raw.githubusercontent.com/&author;/unraid-&name;/main/logo.png</URL>
+<SHA256>4b2350e5f14c460429bf5ef53e8fb2a499eb1a96fc605b61612be39e9c2ce49e</SHA256>
 </FILE>
 
 <FILE Name="/usr/local/emhttp/plugins/&name;/images/&name;.png">
